@@ -1,0 +1,88 @@
+/* Container Utama */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 18px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  z-index: 1000;
+}
+
+.navLogo {
+  color: #047857;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.logoAccent {
+  color: #b45309;
+  font-weight: 800;
+}
+
+/* Nav Links Desktop */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navItem {
+  font-weight: 500;
+  color: #0f172a;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navItem:hover {
+  color: #b45309;
+}
+
+.btnCta {
+  background-color: #047857;
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btnCta:hover {
+  background-color: #065f46;
+}
+
+/* Tampilan Mobile */
+.menuIcon {
+  display: none;
+  cursor: pointer;
+  color: #047857;
+}
+
+@media (max-width: 768px) {
+  .menuIcon {
+    display: block;
+  }
+
+  .navLinks {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 30px 0;
+    gap: 25px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+    display: none; /* Default tersembunyi */
+  }
+
+  .navLinks.active {
+    display: flex; /* Muncul saat diklik */
+  }
+}

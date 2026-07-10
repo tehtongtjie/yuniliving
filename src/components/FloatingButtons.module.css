@@ -1,0 +1,34 @@
+.floatingContainer {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 9999; /* Agar selalu di atas elemen lain */
+}
+
+.btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.waBtn {
+  background-color: #25d366; /* Hijau WhatsApp */
+}
+
+.emailBtn {
+  background-color: #ea4335; /* Merah Gmail */
+}

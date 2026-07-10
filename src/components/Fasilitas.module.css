@@ -1,0 +1,62 @@
+.sectionContainer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.textCenter {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.gridFourCols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.facilityCard {
+  background: white;
+  padding: 40px 20px;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid #f1f5f9;
+  transition: all 0.4s ease;
+  cursor: default;
+}
+
+.facilityCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0,0,0,0.06);
+  border-color: #e2e8f0;
+}
+
+.iconBox {
+  color: #047857;
+  background-color: #ecfdf5;
+  width: 65px;
+  height: 65px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  transition: all 0.3s ease;
+}
+
+.facilityCard:hover .iconBox {
+  background-color: #047857;
+  color: white;
+}
+
+.facilityName {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 1.1rem;
+}

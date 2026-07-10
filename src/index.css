@@ -1,0 +1,28 @@
+/* src/index.css */
+:root {
+  --primary: #047857; /* Hijau Emerald */
+  --primary-hover: #065f46;
+  --dark: #0f172a; /* Slate Gelap */
+  --light: #f8fafc; /* Background Terang */
+  --text-main: #334155;
+  --text-muted: #64748b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--light);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
