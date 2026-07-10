@@ -1,62 +1,105 @@
-.sectionContainer {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 80px 20px;
+.section{
+    max-width:1280px;
+    margin:auto;
+    padding:100px 24px;
 }
 
-.textCenter {
-  text-align: center;
-  margin-bottom: 50px;
+.heading{
+    text-align:center;
+    margin-bottom:60px;
 }
 
-.sectionTitle {
-  font-size: 2rem;
-  color: #0f172a;
-  margin-bottom: 10px;
+.heading span{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:999px;
+    background:#f8f4eb;
+    color:#b8862b;
+    font-weight:600;
+    margin-bottom:18px;
 }
 
-.gridFourCols {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+.heading h2{
+    font-size:clamp(2rem,5vw,3rem);
+    color:#111827;
+    margin-bottom:18px;
 }
 
-.facilityCard {
-  background: white;
-  padding: 40px 20px;
-  border-radius: 20px;
-  text-align: center;
-  border: 1px solid #f1f5f9;
-  transition: all 0.4s ease;
-  cursor: default;
+.heading p{
+    max-width:620px;
+    margin:auto;
+    color:#6b7280;
+    line-height:1.8;
 }
 
-.facilityCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 30px rgba(0,0,0,0.06);
-  border-color: #e2e8f0;
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
 }
 
-.iconBox {
-  color: #047857;
-  background-color: #ecfdf5;
-  width: 65px;
-  height: 65px;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-  transition: all 0.3s ease;
+.card{
+    background:#fff;
+    border-radius:24px;
+    padding:40px 30px;
+
+    text-align:center;
+
+    border:1px solid #eef2f7;
+
+    transition:.35s;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.05);
 }
 
-.facilityCard:hover .iconBox {
-  background-color: #047857;
-  color: white;
+.card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:0 22px 50px rgba(0,0,0,.10);
 }
 
-.facilityName {
-  font-weight: 600;
-  color: #1e293b;
-  font-size: 1.1rem;
+.icon{
+    width:72px;
+    height:72px;
+
+    margin:auto;
+
+    border-radius:20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #d8b45d,
+        #b8862b
+    );
+
+    color:#fff;
+
+    margin-bottom:24px;
+}
+
+.card h3{
+    color:#111827;
+    margin-bottom:14px;
+    font-size:1.25rem;
+}
+
+.card p{
+    color:#6b7280;
+    line-height:1.8;
+}
+
+@media(max-width:768px){
+
+.section{
+    padding:80px 20px;
+}
+
+.grid{
+    grid-template-columns:1fr;
+}
+
 }

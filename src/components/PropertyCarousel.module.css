@@ -1,67 +1,279 @@
-.sectionContainer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 20px;
+.section{
+    max-width:1280px;
+    margin:auto;
+    padding:100px 24px;
 }
 
-.sectionTitle {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: #0f172a;
+.heading{
+    text-align:center;
+    margin-bottom:60px;
 }
 
-/* Container untuk scroll samping */
-.carousel {
-  display: flex;
-  gap: 25px;
-  overflow-x: auto;
-  padding-bottom: 20px; /* Jarak untuk scrollbar */
-  scrollbar-width: thin; /* Untuk browser modern */
+.heading span{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:999px;
+    background:#f8f4eb;
+    color:#b8862b;
+    font-weight:600;
+    margin-bottom:18px;
 }
 
-/* Styling Card */
-.card {
-  min-width: 300px; /* Lebar card */
-  background: white;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: transform 0.3s;
+.heading h2{
+    font-size:clamp(2rem,5vw,3rem);
+    color:#111827;
+    margin-bottom:15px;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.heading p{
+    max-width:620px;
+    margin:auto;
+    color:#6b7280;
+    line-height:1.8;
 }
 
-.cardImg {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:32px;
 }
 
-.cardBody {
-  padding: 20px;
+/* CARD */
+
+.card{
+    background:#fff;
+    border-radius:24px;
+    overflow:hidden;
+
+    transition:.35s;
+
+    border:1px solid #f1f5f9;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.06);
 }
 
-.tag {
-  background: #fef3c7;
-  color: #92400e;
-  padding: 4px 12px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+        0 30px 60px rgba(0,0,0,.12);
 }
 
-.title {
-  font-size: 1.25rem;
-  margin: 10px 0;
-  color: #1e293b;
+/* IMAGE */
+
+.image{
+
+    position:relative;
+
+    overflow:hidden;
+
+    height:260px;
 }
 
-.price {
-  font-weight: 700;
-  color: #047857;
-  display: block;
-  margin-bottom: 10px;
+.image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.6s;
+}
+
+.card:hover img{
+
+    transform:scale(1.08);
+}
+
+/* BADGE */
+
+.badge{
+
+    position:absolute;
+
+    top:18px;
+    left:18px;
+
+    background:#fff;
+
+    color:#b8862b;
+
+    padding:7px 15px;
+
+    border-radius:999px;
+
+    font-size:.8rem;
+
+    font-weight:600;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.08);
+}
+
+/* FAVORITE */
+
+.favorite{
+
+    position:absolute;
+
+    top:18px;
+    right:18px;
+
+    width:42px;
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.95);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.favorite:hover{
+
+    background:#b8862b;
+
+    color:#fff;
+}
+
+/* BODY */
+
+.body{
+
+    padding:26px;
+}
+
+.rating{
+
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    color:#f59e0b;
+
+    font-weight:600;
+
+    margin-bottom:12px;
+}
+
+.body h3{
+
+    font-size:1.35rem;
+
+    color:#111827;
+
+    margin-bottom:14px;
+}
+
+.location{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    color:#6b7280;
+
+    margin-bottom:25px;
+}
+
+/* FOOTER */
+
+.footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:end;
+
+    gap:20px;
+}
+
+.footer small{
+
+    display:block;
+
+    color:#9ca3af;
+
+    margin-bottom:4px;
+}
+
+.footer h4{
+
+    color:#b8862b;
+
+    font-size:1.3rem;
+}
+
+.button{
+
+    border:none;
+
+    background:linear-gradient(
+        135deg,
+        #d8b45d,
+        #b8862b
+    );
+
+    color:#fff;
+
+    padding:12px 22px;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(184,134,43,.35);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.section{
+
+    padding:80px 20px;
+}
+
+.grid{
+
+    grid-template-columns:1fr;
+}
+
+.image{
+
+    height:230px;
+}
+
+.footer{
+
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.button{
+
+    width:100%;
+}
+
 }

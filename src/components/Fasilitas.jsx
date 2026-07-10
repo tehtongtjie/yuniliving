@@ -1,32 +1,79 @@
-import React from 'react';
-import { Wifi, Trees, Coffee, MapPin, ShieldCheck, Zap } from 'lucide-react';
-import styles from './Fasilitas.module.css';
+import React from "react";
+import {
+  Wifi,
+  Trees,
+  Coffee,
+  MapPin,
+  ShieldCheck,
+  Zap,
+} from "lucide-react";
+
+import styles from "./Fasilitas.module.css";
 
 function Fasilitas() {
   const fasilitas = [
-    { icon: <Wifi size={28} />, name: "High-Speed Wi-Fi" },
-    { icon: <Trees size={28} />, name: "Private Area" },
-    { icon: <Coffee size={28} />, name: "Full Amenities" },
-    { icon: <MapPin size={28} />, name: "Strategis" },
-    { icon: <ShieldCheck size={28} />, name: "24/7 Keamanan" },
-    { icon: <Zap size={28} />, name: "Listrik Stabil" }
+    {
+      icon: <Wifi size={30} />,
+      title: "High-Speed Wi-Fi",
+      desc: "Internet cepat dan stabil untuk bekerja maupun hiburan.",
+    },
+    {
+      icon: <Trees size={30} />,
+      title: "Lingkungan Asri",
+      desc: "Suasana tenang dengan area hijau yang nyaman.",
+    },
+    {
+      icon: <Coffee size={30} />,
+      title: "Fasilitas Lengkap",
+      desc: "Perabot modern dan kebutuhan harian tersedia.",
+    },
+    {
+      icon: <MapPin size={30} />,
+      title: "Lokasi Strategis",
+      desc: "Dekat pusat kota, kampus, dan area wisata.",
+    },
+    {
+      icon: <ShieldCheck size={30} />,
+      title: "Keamanan 24 Jam",
+      desc: "Area aman dengan sistem keamanan yang terjaga.",
+    },
+    {
+      icon: <Zap size={30} />,
+      title: "Listrik Stabil",
+      desc: "Pasokan listrik yang andal untuk aktivitas sehari-hari.",
+    },
   ];
 
   return (
-    <section id="fasilitas" className={styles.sectionContainer}>
-      <div className={styles.textCenter}>
-        <h3 className={styles.sectionTitle}>Kenapa Memilih Yuni Living?</h3>
-        <p style={{ color: '#64748b' }}>Standar layanan yang kami berikan untuk setiap properti</p>
+    <section id="fasilitas" className={styles.section}>
+
+      <div className={styles.heading}>
+        <span>Fasilitas Unggulan</span>
+
+        <h2>Semua yang Anda Butuhkan Ada di Sini</h2>
+
+        <p>
+          Setiap properti Yuni Living dirancang untuk memberikan
+          kenyamanan, keamanan, dan pengalaman tinggal terbaik.
+        </p>
       </div>
-      
-      <div className={styles.gridFourCols}>
+
+      <div className={styles.grid}>
         {fasilitas.map((item, index) => (
-          <div key={index} className={styles.facilityCard}>
-            <div className={styles.iconBox}>{item.icon}</div>
-            <span className={styles.facilityName}>{item.name}</span>
+          <div className={styles.card} key={index}>
+
+            <div className={styles.icon}>
+              {item.icon}
+            </div>
+
+            <h3>{item.title}</h3>
+
+            <p>{item.desc}</p>
+
           </div>
         ))}
       </div>
+
     </section>
   );
 }

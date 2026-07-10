@@ -1,42 +1,117 @@
-import React from 'react';
-import styles from './Footer.module.css';
+import React from "react";
+import { MapPin, Phone, Mail, ChevronRight } from "lucide-react";
+import { FaInstagram, FaFacebookF } from "react-icons/fa";
+
+import styles from "./Footer.module.css";
 
 function Footer() {
   return (
     <footer id="kontak" className={styles.footer}>
-      <div className={styles.footerGrid}>
-        {/* Kolom 1: Brand */}
-        <div className={styles.brandDesc}>
-          <h4>Yuni LIVING</h4>
+      <div className={styles.container}>
+        {/* Brand */}
+        <div className={styles.brand}>
+          <h2>
+            YUNI <span>LIVING</span>
+          </h2>
+
           <p>
-            Menyediakan hunian eksklusif, mulai dari villa mewah, apartemen strategis, hingga kost nyaman di Lombok. 
-            Prioritas kami adalah kenyamanan Anda.
+            Yuni Living menyediakan villa, apartemen, dan kost premium
+            dengan lokasi strategis, fasilitas lengkap, serta pelayanan
+            profesional untuk kenyamanan Anda.
           </p>
+
+          <div className={styles.socials}>
+            <a
+              href="https://instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagram size={20} />
+            </a>
+
+            <a
+              href="https://facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <FaFacebookF size={18} />
+            </a>
+          </div>
         </div>
 
-        {/* Kolom 2: Quick Links */}
-        <div className={styles.footerLinks}>
-          <h5>Navigasi</h5>
+        {/* Navigasi */}
+        <div className={styles.links}>
+          <h4>Navigasi</h4>
+
           <ul>
-            <li><a href="#tentang">Tentang Kami</a></li>
-            <li><a href="#villa">Villa</a></li>
-            <li><a href="#apartemen">Apartemen</a></li>
-            <li><a href="#kost">Kost</a></li>
+            <li>
+              <a href="#beranda">
+                <ChevronRight size={16} />
+                <span>Beranda</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#tentang">
+                <ChevronRight size={16} />
+                <span>Tentang</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#properti">
+                <ChevronRight size={16} />
+                <span>Properti</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#fasilitas">
+                <ChevronRight size={16} />
+                <span>Fasilitas</span>
+              </a>
+            </li>
           </ul>
         </div>
 
-        {/* Kolom 3: Kontak */}
-        <div className={styles.footerLinks}>
-          <h5>Kontak</h5>
-          <p>Jl. Raya Utama No. 123, Mataram</p>
-          <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
-            WhatsApp: 0812-3456-7890
-          </a>
+        {/* Kontak */}
+        <div className={styles.links}>
+          <h4>Hubungi Kami</h4>
+
+          <ul>
+            <li>
+              <MapPin size={18} />
+              <span>Mataram, Lombok, NTB</span>
+            </li>
+
+            <li>
+              <Phone size={18} />
+              <a href="tel:+6281234567890">
+                +62 812-3456-7890
+              </a>
+            </li>
+
+            <li>
+              <Mail size={18} />
+              <a href="mailto:info@yuniliving.com">
+                info@yuniliving.com
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
 
-      <div className={styles.copyright}>
-        &copy; {new Date().getFullYear()} Yuniar Living. All Rights Reserved.
+      <div className={styles.bottom}>
+        <span>
+          © {new Date().getFullYear()} Yuni Living. All Rights Reserved.
+        </span>
+
+        <div className={styles.policy}>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
       </div>
     </footer>
   );

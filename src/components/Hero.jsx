@@ -1,18 +1,56 @@
-import React from 'react';
-import styles from './Hero.module.css';
+import React from "react";
+import styles from "./Hero.module.css";
 
 function Hero() {
   return (
-    <header className={styles.hero}>
-      <div className={styles.heroBg}></div>
+    <section className={styles.hero} id="beranda">
+      <div className={styles.overlay}></div>
+
       <div className={styles.heroContent}>
-        <h2>Temukan Hunian Impian Anda di Yuni Living</h2>
-        <p>Pilihan eksklusif villa, apartemen, dan kost terbaik dengan kenyamanan nomor satu.</p>
-        <a href="#properti" className={styles.btnCta}>
-          Lihat Katalog Properti
-        </a>
+        <span className={styles.badge}>
+          ✨ Premium Property in Lombok
+        </span>
+
+        <h1>
+          Temukan Hunian
+          <span> Nyaman & Elegan </span>
+          Bersama Yuni Living
+        </h1>
+
+        <p>
+          Kami menghadirkan pilihan villa, apartemen, dan kost eksklusif
+          dengan lokasi strategis, fasilitas terbaik, serta pelayanan
+          profesional untuk memenuhi kebutuhan tempat tinggal Anda.
+        </p>
+
+        <div className={styles.heroButtons}>
+          <a href="#properti" className={styles.btnPrimary}>
+            Jelajahi Properti
+          </a>
+
+          <a href="#kontak" className={styles.btnSecondary}>
+            Konsultasi Gratis
+          </a>
+        </div>
+
+        <div className={styles.heroStats}>
+          <div>
+            <h3>150+</h3>
+            <span>Properti</span>
+          </div>
+
+          <div>
+            <h3>500+</h3>
+            <span>Pelanggan</span>
+          </div>
+
+          <div>
+            <h3>4.9★</h3>
+            <span>Rating</span>
+          </div>
+        </div>
       </div>
-    </header>
+    </section>
   );
 }
 

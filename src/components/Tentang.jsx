@@ -1,34 +1,86 @@
-import React from 'react';
-import styles from './Tentang.module.css';
+import React from "react";
+import { Home, ShieldCheck, MapPin } from "lucide-react";
+import styles from "./Tentang.module.css";
 
 function Tentang() {
   return (
-    <section id="tentang" className={styles.sectionContainer}>
-      <div className={styles.gridTwoCols}>
-        <div>
-          <span className={styles.labelSub}>Tentang Yuni Living</span>
-          <h3 className={styles.sectionTitle}>Hunian Berkualitas, Kenyamanan Utama</h3>
-          <p className={styles.description}>
-            Yuniar Living hadir sebagai solusi hunian terpercaya dengan portofolio beragam mulai dari Villa eksklusif, Apartemen strategis, hingga Kost yang nyaman. Kami berkomitmen memberikan pengalaman menginap dan tempat tinggal dengan standar kenyamanan terbaik.
-          </p>
-          
-          <div style={{ display: 'flex', gap: '20px' }}>
-            {/* Bisa tambahkan badge atau poin keunggulan di sini */}
-            <div style={{ padding: '10px', background: '#f8fafc', borderRadius: '10px' }}>
-              <strong>10+</strong> Properti Tersebar
-            </div>
-            <div style={{ padding: '10px', background: '#f8fafc', borderRadius: '10px' }}>
-              <strong>Terpercaya</strong> Sejak 2020
-            </div>
-          </div>
-        </div>
+    <section id="tentang" className={styles.section}>
+      <div className={styles.container}>
 
-        <div className={styles.imgWrapper}>
-          <img 
-            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" 
-            alt="Yuniar Living Property" 
+        <div className={styles.image}>
+          <img
+            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80"
+            alt="Yuni Living Property"
           />
         </div>
+
+        <div className={styles.content}>
+
+          <span className={styles.badge}>
+            Tentang Yuni Living
+          </span>
+
+          <h2>
+            Menghadirkan Hunian Nyaman,
+            <span> Modern, dan Berkualitas.</span>
+          </h2>
+
+          <p>
+            Yuni Living menyediakan berbagai pilihan villa, apartemen,
+            dan kost premium dengan lokasi strategis, fasilitas lengkap,
+            serta pelayanan profesional untuk memberikan pengalaman
+            tinggal yang aman, nyaman, dan berkesan.
+          </p>
+
+          <div className={styles.features}>
+
+            <div className={styles.feature}>
+              <Home size={22}/>
+              <div>
+                <h4>Properti Berkualitas</h4>
+                <span>Villa, apartemen, dan kost pilihan.</span>
+              </div>
+            </div>
+
+            <div className={styles.feature}>
+              <MapPin size={22}/>
+              <div>
+                <h4>Lokasi Strategis</h4>
+                <span>Dekat pusat aktivitas dan fasilitas umum.</span>
+              </div>
+            </div>
+
+            <div className={styles.feature}>
+              <ShieldCheck size={22}/>
+              <div>
+                <h4>Pelayanan Terpercaya</h4>
+                <span>Kepuasan pelanggan menjadi prioritas utama.</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div className={styles.stats}>
+
+            <div>
+              <h3>10+</h3>
+              <span>Properti</span>
+            </div>
+
+            <div>
+              <h3>500+</h3>
+              <span>Pelanggan</span>
+            </div>
+
+            <div>
+              <h3>2020</h3>
+              <span>Berdiri</span>
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
     </section>
   );

@@ -1,33 +1,137 @@
-import React from 'react';
-import styles from './PropertyCarousel.module.css';
+import React from "react";
+import {
+  Heart,
+  MapPin,
+  Star
+} from "lucide-react";
+
+import styles from "./PropertyCarousel.module.css";
 
 function PropertyCarousel() {
-  const propertiTerbaik = [
-    { nama: "Villa Rinjani Luxury", tipe: "Villa", harga: "Rp 2.5jt/malam", img: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=500&q=80" },
-    { nama: "Apartemen Mataram Suite", tipe: "Apartemen", harga: "Rp 6jt/bulan", img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=500&q=80" },
-    { nama: "Kost Exclusive Yuniar", tipe: "Kost", harga: "Rp 1.5jt/bulan", img: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=500&q=80" },
-    { nama: "Villa Senaru View", tipe: "Villa", harga: "Rp 1.8jt/malam", img: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=500&q=80" }
+
+  const properti = [
+
+    {
+      nama:"Villa Rinjani Luxury",
+      tipe:"Villa",
+      lokasi:"Senggigi, Lombok",
+      harga:"Rp 2.500.000 / malam",
+      rating:"4.9",
+      img:"https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=900&q=80"
+    },
+
+    {
+      nama:"Apartemen Mataram Suite",
+      tipe:"Apartemen",
+      lokasi:"Mataram",
+      harga:"Rp 6.000.000 / bulan",
+      rating:"4.8",
+      img:"https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=900&q=80"
+    },
+
+    {
+      nama:"Kost Exclusive Yuni",
+      tipe:"Kost",
+      lokasi:"Mataram",
+      harga:"Rp 1.500.000 / bulan",
+      rating:"4.7",
+      img:"https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80"
+    },
+
+    {
+      nama:"Villa Senaru View",
+      tipe:"Villa",
+      lokasi:"Senaru",
+      harga:"Rp 1.800.000 / malam",
+      rating:"4.9",
+      img:"https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80"
+    }
+
   ];
 
   return (
-    <section className={styles.sectionContainer}>
-      <h3 className={styles.sectionTitle}>Pilihan Properti Terbaik</h3>
-      <div className={styles.carousel}>
-        {propertiTerbaik.map((item, index) => (
-          <div key={index} className={styles.card}>
-            <img src={item.img} alt={item.nama} className={styles.cardImg} />
-            <div className={styles.cardBody}>
-              <span className={styles.tag}>{item.tipe}</span>
-              <h4 className={styles.title}>{item.nama}</h4>
-              <span className={styles.price}>{item.harga}</span>
-              <button style={{ width: '100%', padding: '10px', background: '#047857', color: 'white', border: 'none', borderRadius: '8px', cursor: 'pointer' }}>
-                Lihat Detail
-              </button>
-            </div>
-          </div>
-        ))}
+
+    <section className={styles.section} id="properti">
+
+      <div className={styles.heading}>
+
+        <span>Pilihan Terbaik</span>
+
+        <h2>Temukan Properti Impian Anda</h2>
+
+        <p>
+          Koleksi villa, apartemen, dan kost premium dengan
+          fasilitas terbaik dan lokasi strategis.
+        </p>
+
       </div>
+
+      <div className={styles.grid}>
+
+        {properti.map((item,index)=>(
+
+          <div
+            className={styles.card}
+            key={index}
+          >
+
+            <div className={styles.image}>
+
+              <img
+                src={item.img}
+                alt={item.nama}
+              />
+
+              <span className={styles.badge}>
+                {item.tipe}
+              </span>
+
+              <button className={styles.favorite}>
+                <Heart size={18}/>
+              </button>
+
+            </div>
+
+            <div className={styles.body}>
+
+              <div className={styles.rating}>
+                <Star size={16} fill="currentColor"/>
+                {item.rating}
+              </div>
+
+              <h3>{item.nama}</h3>
+
+              <div className={styles.location}>
+                <MapPin size={17}/>
+                {item.lokasi}
+              </div>
+
+              <div className={styles.footer}>
+
+                <div>
+
+                  <small>Mulai dari</small>
+
+                  <h4>{item.harga}</h4>
+
+                </div>
+
+                <button className={styles.button}>
+                  Detail
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        ))}
+
+      </div>
+
     </section>
+
   );
 }
 

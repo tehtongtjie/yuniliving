@@ -1,28 +1,37 @@
-import React from 'react';
-import { MessageCircle, Mail } from 'lucide-react';
-import styles from './FloatingButtons.module.css';
+import React from "react";
+import { Mail } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+import styles from "./FloatingButtons.module.css";
 
 function FloatingButtons() {
   return (
     <div className={styles.floatingContainer}>
-      {/* Tombol WhatsApp */}
-      <a 
-        href="https://wa.me/6281234567890" 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      {/* WhatsApp */}
+      <a
+        href="https://wa.me/6281234567890"
+        target="_blank"
+        rel="noopener noreferrer"
         className={`${styles.btn} ${styles.waBtn}`}
-        title="Chat via WhatsApp"
+        aria-label="WhatsApp"
       >
-        <MessageCircle size={28} />
+        <FaWhatsapp size={28} />
+
+        <span className={styles.tooltip}>
+          Chat WhatsApp
+        </span>
       </a>
 
-      {/* Tombol Email */}
-      <a 
-        href="mailto:halo@yuniarliving.com" 
+      {/* Email */}
+      <a
+        href="mailto:halo@yuniliving.com"
         className={`${styles.btn} ${styles.emailBtn}`}
-        title="Kirim Email"
+        aria-label="Email"
       >
-        <Mail size={28} />
+        <Mail size={26} />
+
+        <span className={styles.tooltip}>
+          Kirim Email
+        </span>
       </a>
     </div>
   );
