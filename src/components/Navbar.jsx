@@ -1,17 +1,19 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import styles from "./Navbar.module.css";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
   const closeMenu = () => setIsOpen(false);
 
   return (
     <header className={styles.navbar}>
       <div className={styles.logo}>
-        <span className={styles.logoPrimary}>YUNI</span>
-        <span className={styles.logoAccent}>LIVING</span>
+        <Link to="/" onClick={closeMenu} style={{ textDecoration: "none" }}>
+          <span className={styles.logoPrimary}>YUNI</span>
+          <span className={styles.logoAccent}>LIVING</span>
+        </Link>
       </div>
 
       <button
@@ -19,25 +21,25 @@ function Navbar() {
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle Menu"
       >
-        {isOpen ? <X size={28} /> : <Menu size={28} />}
+        {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
       <nav className={`${styles.navLinks} ${isOpen ? styles.active : ""}`}>
-        <a href="#tentang" onClick={closeMenu}>
+        <Link to="/" onClick={closeMenu}>
           Tentang
-        </a>
+        </Link>
 
-        <a href="#villa" onClick={closeMenu}>
+        <Link to="/villa" onClick={closeMenu}>
           Villa
-        </a>
+        </Link>
 
-        <a href="#apartemen" onClick={closeMenu}>
+        <Link to="/apartemen" onClick={closeMenu}>
           Apartemen
-        </a>
+        </Link>
 
-        <a href="#kost" onClick={closeMenu}>
+        <Link to="/kost" onClick={closeMenu}>
           Kost
-        </a>
+        </Link>
 
         <a
           href="#kontak"

@@ -1,337 +1,270 @@
 /* =========================
-   NAVBAR
+   NAVBAR – Elegant Minimalist
 ========================= */
 
-*{
-    box-sizing:border-box;
+* {
+  box-sizing: border-box;
 }
 
-.navbar{
-    position:fixed;
-    top:18px;
-    left:50%;
-    transform:translateX(-50%);
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 
-    width:min(92%,1280px);
+  width: min(90%, 1100px);
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    padding:14px clamp(18px,3vw,34px);
+  padding: 12px clamp(20px, 3vw, 32px);
 
-    border-radius:22px;
+  border-radius: 100px; /* lebih soft & modern */
 
-    background:rgba(255,255,255,.82);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 
-    border:1px solid rgba(255,255,255,.35);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.02);
 
-    box-shadow:
-        0 10px 35px rgba(0,0,0,.08);
-
-    z-index:9999;
-
-    transition:.35s;
+  z-index: 9999;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* =========================
    LOGO
 ========================= */
 
-.logo{
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
 
-    display:flex;
-    align-items:center;
-
-    gap:6px;
-
-    font-size:clamp(1.2rem,2vw,1.45rem);
-
-    font-weight:700;
-
-    letter-spacing:2px;
-
-    flex-shrink:0;
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  flex-shrink: 0;
 }
 
-.logoPrimary{
-
-    color:#111827;
+.logoPrimary {
+  color: #1a1a1a;
 }
 
-.logoAccent{
-
-    color:#c89b3c;
+.logoAccent {
+  color: #b8975a; /* soft champagne gold */
+  font-weight: 500;
 }
 
 /* =========================
    MENU
 ========================= */
 
-.navLinks{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:clamp(18px,2vw,36px);
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: clamp(22px, 2.5vw, 36px);
 }
 
-.navLinks a{
-
-    color:#1f2937;
-
-    text-decoration:none;
-
-    font-weight:500;
-
-    font-size:.95rem;
-
-    position:relative;
-
-    transition:.3s;
+.navLinks a {
+  color: #3f3f46;
+  text-decoration: none;
+  font-weight: 450;
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-.navLinks a::after{
-
-    content:"";
-
-    position:absolute;
-
-    bottom:-7px;
-
-    left:50%;
-
-    width:0;
-
-    height:2px;
-
-    background:#c89b3c;
-
-    transform:translateX(-50%);
-
-    transition:.3s;
+.navLinks a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  width: 0;
+  height: 1.5px;
+  background: #b8975a;
+  transform: translateX(-50%);
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 2px;
 }
 
-.navLinks a:hover{
-
-    color:#c89b3c;
+.navLinks a:hover {
+  color: #1a1a1a;
 }
 
-.navLinks a:hover::after{
-
-    width:100%;
+.navLinks a:hover::after {
+  width: 100%;
 }
 
 /* =========================
    CTA
 ========================= */
 
-.ctaButton{
+.ctaButton {
+  padding: 10px 22px;
+  border-radius: 100px;
 
-    padding:12px 24px;
+  color: #fff !important;
+  background: #1a1a1a; /* hitam elegan, minimalist */
 
-    border-radius:999px;
+  font-weight: 500 !important;
+  font-size: 0.88rem !important;
+  letter-spacing: 0.3px;
 
-    color:#fff !important;
-
-    background:linear-gradient(
-        135deg,
-        #d8b45d,
-        #b8862b
-    );
-
-    box-shadow:
-        0 10px 25px rgba(184,134,43,.25);
-
-    transition:.3s;
-
-    white-space:nowrap;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
 }
 
-.ctaButton::after{
-
-    display:none;
+.ctaButton::after {
+  display: none;
 }
 
-.ctaButton:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 15px 30px rgba(184,134,43,.35);
+.ctaButton:hover {
+  background: #2d2d2d;
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
 }
 
 /* =========================
    HAMBURGER
 ========================= */
 
-.menuButton{
+.menuButton {
+  display: none;
+  border: none;
+  background: none;
+  color: #1a1a1a;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  transition: background 0.25s ease;
+}
 
-    display:none;
-
-    border:none;
-
-    background:none;
-
-    color:#111827;
-
-    cursor:pointer;
-
-    padding:4px;
+.menuButton:hover {
+  background: rgba(0, 0, 0, 0.04);
 }
 
 /* =========================
    TABLET
 ========================= */
 
-@media (max-width:992px){
+@media (max-width: 992px) {
+  .navLinks {
+    gap: 18px;
+  }
 
-.navLinks{
-
-    gap:20px;
-}
-
+  .navLinks a {
+    font-size: 0.88rem;
+  }
 }
 
 /* =========================
    MOBILE
 ========================= */
 
-@media (max-width:768px){
+@media (max-width: 768px) {
+  .navbar {
+    top: 14px;
+    width: 92%;
+    padding: 12px 18px;
+    border-radius: 18px;
+  }
 
-.navbar{
+  .menuButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+  }
 
-    top:14px;
+  .navLinks {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
 
-    width:94%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 
-    padding:14px 18px;
-}
+    padding: 16px;
+    border-radius: 18px;
 
-.menuButton{
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
 
-    display:flex;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
 
-    align-items:center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px) scale(0.98);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
 
-    justify-content:center;
+  .active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
 
-    z-index:1001;
-}
+  .navLinks a {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 0.95rem;
+    border-radius: 12px;
+    transition: background 0.25s ease;
+  }
 
-.navLinks{
+  .navLinks a:hover {
+    background: rgba(0, 0, 0, 0.03);
+  }
 
-    position:absolute;
+  .navLinks a::after {
+    display: none;
+  }
 
-    top:calc(100% + 12px);
-
-    left:0;
-
-    width:100%;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:20px;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    background:rgba(255,255,255,.95);
-
-    backdrop-filter:blur(20px);
-
-    box-shadow:
-        0 20px 40px rgba(0,0,0,.08);
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transform:translateY(-20px);
-
-    transition:.35s;
-}
-
-.active{
-
-    opacity:1;
-
-    visibility:visible;
-
-    transform:translateY(0);
-}
-
-.navLinks a{
-
-    width:100%;
-
-    text-align:center;
-
-    font-size:1rem;
-}
-
-.ctaButton{
-
-    width:100%;
-
-    text-align:center;
-
-    justify-content:center;
-}
-
+  .ctaButton {
+    width: 100%;
+    margin-top: 8px;
+    padding: 14px 22px;
+    text-align: center;
+  }
 }
 
 /* =========================
    EXTRA SMALL
 ========================= */
 
-@media (max-width:480px){
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+  }
 
-.logo{
+  .navbar {
+    padding: 11px 16px;
+  }
 
-    font-size:1.05rem;
-
-    letter-spacing:1px;
-}
-
-.navbar{
-
-    padding:12px 16px;
-}
-
-.navLinks{
-
-    padding:24px 18px;
-}
-
+  .navLinks {
+    padding: 14px;
+  }
 }
 
 /* =========================
    LARGE SCREEN
 ========================= */
 
-@media (min-width:1600px){
-
-.navbar{
-
-    max-width:1400px;
-}
-
-.logo{
-
-    font-size:1.55rem;
-}
-
-.navLinks a{
-
-    font-size:1rem;
-}
-
+@media (min-width: 1400px) {
+  .navbar {
+    max-width: 1180px;
+  }
 }
